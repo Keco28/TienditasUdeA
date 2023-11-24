@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tienditas_udea/view/store/store.dart';
 
 import '../home/home.dart';
 
@@ -37,11 +38,16 @@ class StoreList extends StatelessWidget{
             return Padding(
               padding: EdgeInsets.only(bottom: 10.0),
               child: GestureDetector(
+                // Navigate to the StoreView passing the store name and description
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => StoreView(
+                      storeName: tienditas[index],
+                      storeDescription: "Description for ${tienditas[index]}.",
+                      imagePath: 'assets/images/store${index + 1}.jpeg', // Adjust image paths as needed
+                      ),
                     ),
                   );
                 },
