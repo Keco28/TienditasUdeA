@@ -31,7 +31,7 @@ class StoreView extends StatelessWidget {
               imagePath,
               fit: BoxFit.fill,
               width: MediaQuery.of(context).size.width,
-              height: 400,// Use BoxFit.cover to fill the container
+              height: 400,
             ),
           ),
 

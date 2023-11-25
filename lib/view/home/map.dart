@@ -1,44 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
-import 'dart:typed_data';
-import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
+import 'package:tienditas_udea/view/store/storelist.dart';
 
-class UniversityMap extends StatelessWidget {
+import '../store/store.dart';
 
-  List<Marker> markers = [];
+class UniversityMap extends StatefulWidget {
+  @override
+  _UniversityMapState createState() => _UniversityMapState();
+}
+
+class _UniversityMapState extends State<UniversityMap> {
+  final TransformationController _controller = TransformationController();
+
+  get tienditas => null;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Adjust the size as needed
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: PhotoView(
-        imageProvider: AssetImage('assets/images/map.jpeg'),
-        minScale: PhotoViewComputedScale.covered / 2,
-        maxScale: PhotoViewComputedScale.covered * 2,
-        backgroundDecoration: BoxDecoration(color: const Color(0xFFFFFFFF).withOpacity(0.23)
+      child: InteractiveViewer(
+        transformationController: _controller,
+        minScale: 0.1,
+        maxScale: 2.0,
+        child: Stack(
+          children: <Widget>[
+            Image.asset('assets/images/map.jpeg'),
+            Positioned(
+              left: 50.0, // Adjust as needed
+              top: 50.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    //
+                  },
+                  child: Icon(Icons.add),
+                ),
+              ),
+            ),
+            // Add more buttons as needed
+          ],
         ),
       ),
     );
   }
-
-
-  void loadMarkers(){
-    markers.add(
-      Marker(
-          width:40.0,
-          height: 40.0,
-          point: LatLng(0.0,0.0),
-          child: Icon(Icons.location_on, color: Colors.red),
-      ),
-    );
-  }
-
 }
-// assets/images/map.jpeg
+
+
