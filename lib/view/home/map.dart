@@ -1,62 +1,277 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
-import 'dart:typed_data';
-import 'dart:ui' as ui;
-import 'package:image/image.dart' as img;
-import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class UniversityMap extends StatelessWidget {
+import '../store/store.dart';
 
-  List<Marker> markers = [];
-  Future<ui.Image> loadImage() async {
-    final ByteData data = await rootBundle.load('assets/images/map.jpeg');
-    final List<int> bytes = data.buffer.asUint8List();
-    final img.Image image = img.decodeImage(Uint8List.fromList(bytes))!;
-    final ui.Image imgui = await loadImageFromByteData(Uint8List.fromList(img.encodePng(image)));
-    return imgui;
+class OtraClase {
+  List<MiObjeto> listaDeObjetos = []; // Asegúrate de tener tu lista de objetos aquí
 }
 
-  Future<ui.Image> loadImageFromByteData(Uint8List img) async {
-    final Completer<ui.Image> completer = Completer();
-    ui.decodeImageFromList(Uint8List.fromList(img), (ui.Image img) {
-      return completer.complete(img);
-    });
-    return completer.future;
-  }
+class MiObjeto {
+  // Definición de tu objeto
+}
+
+class UniversityMap extends StatefulWidget {
+  @override
+  _UniversityMapState createState() => _UniversityMapState();
+}
+
+class _UniversityMapState extends State<UniversityMap> {
+  final TransformationController _controller = TransformationController();
+
+  // Simplemente asumí que tienditas es una lista de objetos
+  List<MiObjeto> get tienditas => OtraClase().listaDeObjetos;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Adjust the size as needed
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: PhotoView(
-        imageProvider: AssetImage('assets/images/map.jpeg'),
-        minScale: PhotoViewComputedScale.covered / 2,
-        maxScale: PhotoViewComputedScale.covered * 2,
-        backgroundDecoration: BoxDecoration(color: const Color(0xFFFFFFFF).withOpacity(0.23)
+      child: InteractiveViewer(
+        transformationController: _controller,
+        minScale: 0.1,
+        maxScale: 2.0,
+        child: Stack(
+          children: <Widget>[
+            Image.asset('assets/images/map.jpeg'),
+            Positioned(
+              left: 600.0, // Adjust as needed
+              top: 350.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StoreView(
+                          storeName: "La Migueria",
+                          storeDescription:"Ubicación: Plazoleta Barrientos\n" ,
+                          imagePath: 'assets/images/migueria.jpg',
+                          storeIcon: 'assets/images/migueria-icono.png,'),
+                      ),
+                    );
+                  },
+                  child: ClipOval(
+                    child: Image.asset(
+                        'assets/images/migueria-icono.png',
+                      width: 50.0,
+                      height: 50.0,
+                    ),
+                  )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 560.0, // Adjust as needed
+              top: 350.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                              storeName: "Arboreo",
+                              storeDescription:"Ubicación: Plazoleta Barrientos\n"
+                                  "\n"
+                                  "siempre lleno de alegría y de delicias; la combinación perfecta para pasar un rato agradable dentro de la U!",
+                              imagePath: 'assets/images/arboreo.jpg',
+                              storeIcon: 'assets/images/arboreo-icono.jpg'),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/arboreo-icono.jpg',
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 650.0, // Adjust as needed
+              top: 200.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                              storeName: "Domo",
+                              storeDescription:"Ubicación: Alrededores de la U\n"
+                                  "\n"
+                                  "Los Domo móviles no solo brindan bienestar a quienes se acercan a ellos a comprar un pasabocas o un café, también son una ayuda para estudiantes de todas las unidades académicas.",
+                              imagePath: 'assets/images/domo.jpg',
+                              storeIcon: 'assets/images/domo-icono.png'),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/domo-icono.png',
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 650.0, // Adjust as needed
+              top: 350.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                              storeName: "Rikuritas",
+                              storeDescription:"Ubicación: Plazoleta Barrientos\n"
+                                  "\n"
+                                  "Uno de los dos primeros locales de comida varia de la Universidad en acogerse de manera oficial a la estrategia de Cero Plástico de un solo uso en la UdeA. ",
+                              imagePath: 'assets/images/rikuritas.jpg',
+                              storeIcon: 'assets/images/rikuritas-icono.jpg'),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/rikuritas-icono.jpg',
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 320.0, // Adjust as needed
+              top: 260.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                        storeName: "Tienda Universitaria",
+                        imagePath: 'assets/images/tienda-universitaria.jpg',
+                        storeDescription: "Ubicación: Bloque 22\n"
+                            "\n"
+                            "La Tienda Universitaria, iniciativa de la Fundación Universidad de Antioquia, abrió sus puertas en 1999 para generar algunos ingresos económicos con la venta de artículos cotidianos y artesanías. La tienda, además, promueve el sentido de pertenencia por la Alma Máter de los antioqueños.",
+                        storeIcon: 'assets/images/tienda-universitaria-icono.png',
+                        ),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tienda-universitaria-icono.png',
+                        width: 40.0,
+                        height: 40.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 330.0, // Adjust as needed
+              top: 150.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                            storeName: "De Lolita",
+                            imagePath: 'assets/images/tienda-universitaria.jpg',
+                            storeDescription: "Ubicación: Entre Bloque 22 y 21\n"
+                                "\n"
+                                "",
+                            storeIcon: 'assets/images/tienda-universitaria-icono.png',
+                          ),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tienda-universitaria-icono.png',
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            Positioned(
+              left: 710.0, // Adjust as needed
+              top: 380.0, // Adjust as needed
+              child: Transform(
+                transform: Matrix4.inverted(_controller.value),
+                child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoreView(
+                            storeName: "Frito Gay",
+                            imagePath: 'assets/images/tienda-universitaria.jpg',
+                            storeDescription: "Ubicación: Plazoleta Barrientos\n"
+                                "\n"
+                                "",
+                            storeIcon: 'assets/images/tienda-universitaria-icono.png',
+                          ),
+                        ),
+                      );
+                    },
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/tienda-universitaria-icono.png',
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    )
+                ),
+              ),
+            ),
+            // Add more buttons as needed
+          ],
         ),
       ),
     );
   }
+}
 
+class OtraClaseScreen extends StatelessWidget {
+  final List<MiObjeto> tiendaList;
 
-  void loadMarkers(){
-    markers.add(
-      Marker(
-          width:40.0,
-          height: 40.0,
-          point: LatLng(0.0,0.0),
-          child: Icon(Icons.location_on, color: Colors.red),
+  OtraClaseScreen({required this.tiendaList});
+
+  @override
+  Widget build(BuildContext context) {
+    // Implementa la pantalla que muestra la lista de objetos aquí
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Tiendas'),
+      ),
+      body: ListView.builder(
+        itemCount: tiendaList.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(tiendaList[index].toString()), // Ajusta esto según la representación de tu objeto
+          );
+        },
       ),
     );
   }
-
 }
-// assets/images/map.jpeg
