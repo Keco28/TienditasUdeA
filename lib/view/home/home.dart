@@ -24,17 +24,18 @@ class HomeState extends State<Home> {
     );
   }
 
-  AppBar myAppBar(){
-    return AppBar(foregroundColor: Colors.white,
+  AppBar myAppBar() {
+    return AppBar(
+      foregroundColor: Colors.white,
       backgroundColor: Colors.green,
       elevation: 0,
-      title: Text("Bienvenido a Tienditas UdeA"),
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: () {
-          // Navigator.pop(context);
-        },
+      title: const Text(
+        "Bienvenido a Tienditas UdeA",
+        style: TextStyle(
+          fontWeight: FontWeight.bold, // Optional: Adjust the font weight
+        ),
       ),
+      centerTitle: true, // Center the title
     );
   }
 }

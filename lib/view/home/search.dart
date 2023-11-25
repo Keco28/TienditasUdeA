@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tienditas_udea/view/store/storelist.dart';
 
-class HeaderWithSearch extends StatelessWidget {
-  const HeaderWithSearch({
+class HeaderWithButton extends StatelessWidget {
+  const HeaderWithButton({
     Key? key,
     required this.size,
   }) : super(key: key);
@@ -19,17 +19,17 @@ class HeaderWithSearch extends StatelessWidget {
           colors: [Colors.green, Colors.grey],
         ),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(36),
-          bottomRight: Radius.circular(36),
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
         ),
       ),
-      margin: const EdgeInsets.only(bottom: 15.0 * 2.5),
+      margin: const EdgeInsets.only(bottom: 15.0),
       child: SizedBox(
         height: size.height * 0.08,
         child: Stack(
           children: <Widget>[
             Positioned(
-              bottom: 0,
+              bottom: 10,
               left: 0,
               right: 0,
               child: Container(
@@ -51,24 +51,28 @@ class HeaderWithSearch extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: TextField(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => StoreList(),
-                          ),);
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => StoreList(),
+                            ),
+                          );
                         },
-                        onChanged: (value) {},
-                        decoration: InputDecoration(
-                          hintText: "Buscar Tienditas",
-                          hintStyle: TextStyle(
-                            color: const Color(0xFF254587).withOpacity(0.5),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        child: const Text(
+                          "Ver Tienditas",
+                          style: TextStyle(
+                            color: Color(0xFF254587),
+                            fontWeight: FontWeight.bold,
                           ),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
                         ),
                       ),
                     ),
-                    const Icon(Icons.search),
                   ],
                 ),
               ),

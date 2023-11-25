@@ -8,7 +8,6 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class UniversityMap extends StatelessWidget {
 
   List<Marker> markers = [];
@@ -21,10 +20,9 @@ class UniversityMap extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       child: PhotoView(
         imageProvider: AssetImage('assets/images/map.jpeg'),
-        minScale: PhotoViewComputedScale.contained,
+        minScale: PhotoViewComputedScale.covered / 2,
         maxScale: PhotoViewComputedScale.covered * 2,
-        backgroundDecoration: BoxDecoration(
-          color: Colors.white,
+        backgroundDecoration: BoxDecoration(color: const Color(0xFFFFFFFF).withOpacity(0.23)
         ),
       ),
     );

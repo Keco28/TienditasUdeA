@@ -34,6 +34,7 @@ dependencies:
   flutter_map: ^6.0.1
   image: ^3.0.1
   flutter_svg: ^0.22.0
+  latlong2: ^0.9.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -69,7 +70,8 @@ flutter:
     - assets/images/domo.png
     - assets/images/store1.jpeg
     - assets/images/store2.jpeg
-    - assets/images/store3.jpeg
+    - assets/images/migueria-icono.png
+    - assets/images/migueria.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
