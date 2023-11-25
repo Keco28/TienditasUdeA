@@ -51,11 +51,11 @@ class StoreList extends StatelessWidget{
       ),
       StoreView(
         storeName: "De Lolita",
-        imagePath: 'assets/images/tienda-universitaria.jpg',
+        imagePath: 'assets/images/lolita.jpg',
         storeDescription: "Ubicación: Entre Bloque 22 y 21\n"
             "\n"
-            "",
-        storeIcon: 'assets/images/tienda-universitaria-icono.png',
+            "Tienda comprometida a impactar la vida de personas que solo llegaron por un trabajo para que ellos impacten la vida de personas que llegaron por solo un café.",
+        storeIcon: 'assets/images/lolita-icono.png',
       ),
       StoreView(
         storeName: "Frito Gay",

@@ -80,6 +80,8 @@ flutter:
     - assets/images/tienda-universitaria.jpg
     - assets/images/rikuritas-icono.jpg
     - assets/images/rikuritas.jpg
+    - assets/images/lolita-icono.png
+    - assets/images/lolita.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

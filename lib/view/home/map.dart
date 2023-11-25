@@ -15,7 +15,13 @@ class UniversityMap extends StatefulWidget {
 class _UniversityMapState extends State<UniversityMap> {
   final TransformationController _controller = TransformationController();
 
-  get tienditas => null;
+  @override
+  void initState() {
+    super.initState();
+    _controller.value = Matrix4.identity()
+      ..scale(5) // Adjust the initial scale as needed
+      ..translate(0.0, -50.0); // Adjust the initial position as needed
+  }
 
   @override
   Widget build(BuildContext context) {
