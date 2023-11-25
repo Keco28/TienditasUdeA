@@ -19,6 +19,7 @@ class _UniversityMapState extends State<UniversityMap> {
         transformationController: _controller,
         minScale: 0.1,
         maxScale: 2.0,
+
         child: Stack(
           children: <Widget>[
             Image.asset('assets/images/map.jpeg'),
@@ -26,6 +27,7 @@ class _UniversityMapState extends State<UniversityMap> {
               left: MediaQuery.of(context).size.width * 0.69, // Adjust as needed
               top: MediaQuery.of(context).size.height * 0.19, // Adjust as needed
                 child: FloatingActionButton(
+                  mini: true,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -38,11 +40,9 @@ class _UniversityMapState extends State<UniversityMap> {
                       ),
                     );
                   },
+
                   child: ClipOval(
-                    child: Image.asset(
-                        'assets/images/migueria-icono.png',
-                      width: 50.0,
-                      height: 50.0,
+                    child: Image.asset('assets/images/migueria-icono.png',
                     ),
                   )
                 ),
@@ -53,6 +53,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -68,10 +69,7 @@ class _UniversityMapState extends State<UniversityMap> {
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/arboreo-icono.jpg',
-                        width: 50.0,
-                        height: 50.0,
+                      child: Image.asset('assets/images/arboreo-icono.jpg',
                       ),
                     )
                 ),
@@ -83,6 +81,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -98,10 +97,7 @@ class _UniversityMapState extends State<UniversityMap> {
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/domo-icono.png',
-                        width: 50.0,
-                        height: 50.0,
+                      child: Image.asset('assets/images/domo-icono.png',
                       ),
                     )
                 ),
@@ -113,6 +109,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -128,10 +125,7 @@ class _UniversityMapState extends State<UniversityMap> {
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/rikuritas-icono.jpg',
-                        width: 50.0,
-                        height: 50.0,
+                      child: Image.asset('assets/images/rikuritas-icono.jpg',
                       ),
                     )
                 ),
@@ -143,6 +137,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -159,10 +154,7 @@ class _UniversityMapState extends State<UniversityMap> {
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/tienda-universitaria-icono.png',
-                        width: 40.0,
-                        height: 40.0,
+                      child: Image.asset('assets/images/tienda-universitaria-icono.png',
                       ),
                     )
                 ),
@@ -174,6 +166,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -190,10 +183,7 @@ class _UniversityMapState extends State<UniversityMap> {
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/lolita-icono.png',
-                        width: 50.0,
-                        height: 50.0,
+                      child: Image.asset('assets/images/lolita-icono.png',
                       ),
                     )
                 ),
@@ -205,6 +195,7 @@ class _UniversityMapState extends State<UniversityMap> {
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
+                    mini: true,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -214,17 +205,14 @@ class _UniversityMapState extends State<UniversityMap> {
                             imagePath: 'assets/images/frito.jpg',
                             storeDescription: "Ubicación: Plazoleta Barrientos\n"
                                 "\n"
-                                "pastelitos y papas pa los descansdos de compumovil",
+                                "pastelitos y papas pa los descansos de compumovil",
                             storeIcon: 'assets/images/frito-icono.png',
                           ),
                         ),
                       );
                     },
                     child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/frito-icono.png',
-                        width: 50.0,
-                        height: 50.0,
+                      child: Image.asset('assets/images/frito-icono.png',
                       ),
                     )
                 ),

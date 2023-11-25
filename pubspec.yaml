@@ -84,6 +84,7 @@ flutter:
     - assets/images/lolita-icono.png
     - assets/images/lolita.jpg
     - assets/images/frito-icono.png
+    - assets/images/frito.jpg
     - assets/images/iconoapp.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
