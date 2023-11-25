@@ -12,7 +12,7 @@ class Body extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          HeaderWithSearch(size: size),
+          HeaderWithButton(size: size),
           UniversityMap(),
         ],
       ),

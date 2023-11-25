@@ -4,18 +4,44 @@ import 'package:tienditas_udea/view/store/store.dart';
 import '../home/home.dart';
 
 class StoreList extends StatelessWidget{
-
   const StoreList({Key? key,}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
-    List<String> tienditas = [
-      "La Migueria",
-      "Patacones",
-      "Arepas de Queso",
-      "Postres de Peño",
-      "Domo",
+    List<StoreView> tienditas = [
+      StoreView(
+        storeName: "La Migueria",
+        imagePath: 'assets/images/migueria.jpg',
+        storeDescription: "Hola soy la miguería for La Migueria.",
+        storeIcon: 'assets/images/migueria-icono.png',
+      ),
+      StoreView(
+        storeName: "Patacones",
+        imagePath: 'assets/images/store2.jpeg',
+        storeDescription: "Personalized description for Patacones.",
+        storeIcon: 'assets/images/store1.jpeg',
+      ),
+      StoreView(
+        storeName: "Arepas de Queso",
+        imagePath: 'assets/images/store1.jpeg',
+        storeDescription: "Personalized description for Arepas de Queso.",
+        storeIcon: 'assets/images/store1.jpeg',
+      ),
+      StoreView(
+        storeName: "Postres de Peño",
+        imagePath: 'assets/images/store1.jpeg',
+        storeDescription: "Personalized description for Postres de Peño.",
+        storeIcon: 'assets/images/store1.jpeg',
+      ),
+      StoreView(
+        storeName: "Domo",
+        imagePath: 'assets/images/store1.jpeg',
+        storeDescription: "Hola Domo.",
+        storeIcon: 'assets/images/store1.jpeg',
+      ),
     ];
+
+
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
@@ -44,24 +70,35 @@ class StoreList extends StatelessWidget{
                     context,
                     MaterialPageRoute(
                       builder: (context) => StoreView(
-                      storeName: tienditas[index],
-                      storeDescription: "Description for ${tienditas[index]}.",
-                      imagePath: 'assets/images/store${index + 1}.jpeg', // Adjust image paths as needed
-                      ),
+                        storeName: tienditas[index].storeName,
+                        storeDescription: tienditas[index].storeDescription,
+                        imagePath: tienditas[index].imagePath,
+                        storeIcon: tienditas[index].storeIcon,),
                     ),
                   );
                 },
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Row(
                     children: [
                       // Aqui vamos a poner la imagen mas adelante
-                      SizedBox(width: 60),
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(tienditas[index].storeIcon),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 20),
                       Text(
-                        tienditas[index],
+                        tienditas[index].storeName,
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 30,
