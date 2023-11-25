@@ -251,27 +251,3 @@ class _UniversityMapState extends State<UniversityMap> {
     );
   }
 }
-
-class OtraClaseScreen extends StatelessWidget {
-  final List<MiObjeto> tiendaList;
-
-  OtraClaseScreen({required this.tiendaList});
-
-  @override
-  Widget build(BuildContext context) {
-    // Implementa la pantalla que muestra la lista de objetos aquí
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Lista de Tiendas'),
-      ),
-      body: ListView.builder(
-        itemCount: tiendaList.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(tiendaList[index].toString()), // Ajusta esto según la representación de tu objeto
-          );
-        },
-      ),
-    );
-  }
-}
