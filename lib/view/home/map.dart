@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../store/store.dart';
 
-class OtraClase {
-  List<MiObjeto> listaDeObjetos = []; // Asegúrate de tener tu lista de objetos aquí
-}
-
-class MiObjeto {
-  // Definición de tu objeto
-}
-
 class UniversityMap extends StatefulWidget {
   @override
   _UniversityMapState createState() => _UniversityMapState();
@@ -17,9 +9,6 @@ class UniversityMap extends StatefulWidget {
 
 class _UniversityMapState extends State<UniversityMap> {
   final TransformationController _controller = TransformationController();
-
-  // Simplemente asumí que tienditas es una lista de objetos
-  List<MiObjeto> get tienditas => OtraClase().listaDeObjetos;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +23,8 @@ class _UniversityMapState extends State<UniversityMap> {
           children: <Widget>[
             Image.asset('assets/images/map.jpeg'),
             Positioned(
-              left: 600.0, // Adjust as needed
-              top: 350.0, // Adjust as needed
-              child: Transform(
-                transform: Matrix4.inverted(_controller.value),
+              left: MediaQuery.of(context).size.width * 0.69, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.19, // Adjust as needed
                 child: FloatingActionButton(
                   onPressed: () {
                     Navigator.push(
@@ -59,11 +46,10 @@ class _UniversityMapState extends State<UniversityMap> {
                     ),
                   )
                 ),
-              ),
             ),
             Positioned(
-              left: 560.0, // Adjust as needed
-              top: 350.0, // Adjust as needed
+              left:MediaQuery.of(context).size.width * 0.59, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.19, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -92,8 +78,8 @@ class _UniversityMapState extends State<UniversityMap> {
               ),
             ),
             Positioned(
-              left: 650.0, // Adjust as needed
-              top: 200.0, // Adjust as needed
+                left:MediaQuery.of(context).size.width * 0.46, // Adjust as needed
+                top: MediaQuery.of(context).size.height * 0.13, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -122,8 +108,8 @@ class _UniversityMapState extends State<UniversityMap> {
               ),
             ),
             Positioned(
-              left: 650.0, // Adjust as needed
-              top: 350.0, // Adjust as needed
+              left:MediaQuery.of(context).size.width * 0.73, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.19, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -152,8 +138,8 @@ class _UniversityMapState extends State<UniversityMap> {
               ),
             ),
             Positioned(
-              left: 320.0, // Adjust as needed
-              top: 260.0, // Adjust as needed
+              left:MediaQuery.of(context).size.width * 0.29, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.13, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -183,8 +169,8 @@ class _UniversityMapState extends State<UniversityMap> {
               ),
             ),
             Positioned(
-              left: 330.0, // Adjust as needed
-              top: 150.0, // Adjust as needed
+              left:MediaQuery.of(context).size.width * 0.35, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.09, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -194,18 +180,18 @@ class _UniversityMapState extends State<UniversityMap> {
                         MaterialPageRoute(
                           builder: (context) => StoreView(
                             storeName: "De Lolita",
-                            imagePath: 'assets/images/tienda-universitaria.jpg',
+                            imagePath: 'assets/images/lolita.jpg',
                             storeDescription: "Ubicación: Entre Bloque 22 y 21\n"
                                 "\n"
-                                "",
-                            storeIcon: 'assets/images/tienda-universitaria-icono.png',
+                                "Tienda comprometida a impactar la vida de personas que solo llegaron por un trabajo para que ellos impacten la vida de personas que llegaron por solo un café.",
+                            storeIcon: 'assets/images/lolita-icono.png',
                           ),
                         ),
                       );
                     },
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/images/tienda-universitaria-icono.png',
+                        'assets/images/lolita-icono.png',
                         width: 50.0,
                         height: 50.0,
                       ),
@@ -214,8 +200,8 @@ class _UniversityMapState extends State<UniversityMap> {
               ),
             ),
             Positioned(
-              left: 710.0, // Adjust as needed
-              top: 380.0, // Adjust as needed
+              left:MediaQuery.of(context).size.width * 0.80, // Adjust as needed
+              top: MediaQuery.of(context).size.height * 0.19, // Adjust as needed
               child: Transform(
                 transform: Matrix4.inverted(_controller.value),
                 child: FloatingActionButton(
@@ -225,18 +211,18 @@ class _UniversityMapState extends State<UniversityMap> {
                         MaterialPageRoute(
                           builder: (context) => StoreView(
                             storeName: "Frito Gay",
-                            imagePath: 'assets/images/tienda-universitaria.jpg',
+                            imagePath: 'assets/images/frito.jpg',
                             storeDescription: "Ubicación: Plazoleta Barrientos\n"
                                 "\n"
-                                "",
-                            storeIcon: 'assets/images/tienda-universitaria-icono.png',
+                                "pastelitos y papas pa los descansdos de compumovil",
+                            storeIcon: 'assets/images/frito-icono.png',
                           ),
                         ),
                       );
                     },
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/images/tienda-universitaria-icono.png',
+                        'assets/images/frito-icono.png',
                         width: 50.0,
                         height: 50.0,
                       ),
