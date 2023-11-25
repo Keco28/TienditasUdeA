@@ -12,32 +12,58 @@ class StoreList extends StatelessWidget{
       StoreView(
         storeName: "La Migueria",
         imagePath: 'assets/images/migueria.jpg',
-        storeDescription: "Hola soy la miguería for La Migueria.",
+        storeDescription: "Ubicación: Plazoleta Barrientos\n"
+            "\n"
+            "siempre lleno de alegría y de delicias; la combinación perfecta para pasar un rato agradable dentro de la U!",
         storeIcon: 'assets/images/migueria-icono.png',
       ),
       StoreView(
-        storeName: "Patacones",
-        imagePath: 'assets/images/store2.jpeg',
-        storeDescription: "Personalized description for Patacones.",
-        storeIcon: 'assets/images/store1.jpeg',
-      ),
-      StoreView(
-        storeName: "Arepas de Queso",
-        imagePath: 'assets/images/store1.jpeg',
-        storeDescription: "Personalized description for Arepas de Queso.",
-        storeIcon: 'assets/images/store1.jpeg',
-      ),
-      StoreView(
-        storeName: "Postres de Peño",
-        imagePath: 'assets/images/store1.jpeg',
-        storeDescription: "Personalized description for Postres de Peño.",
-        storeIcon: 'assets/images/store1.jpeg',
+        storeName: "Arboreo",
+        imagePath: 'assets/images/arboreo.jpg',
+        storeDescription: "Ubicación: Plazoleta Barrientos\n"
+            "\n"
+            "Comida ligera, rica y saludable con conciencia social y ambiental.",
+        storeIcon: 'assets/images/arboreo-icono.jpg',
       ),
       StoreView(
         storeName: "Domo",
-        imagePath: 'assets/images/store1.jpeg',
-        storeDescription: "Hola Domo.",
-        storeIcon: 'assets/images/store1.jpeg',
+        imagePath: 'assets/images/domo.jpg',
+        storeDescription: "Ubicación: Alrededores de la U\n"
+            "\n"
+            "Los Domo móviles no solo brindan bienestar a quienes se acercan a ellos a comprar un pasabocas o un café, también son una ayuda para estudiantes de todas las unidades académicas.",
+        storeIcon: 'assets/images/domo-icono.png',
+      ),
+      StoreView(
+        storeName: "Rikuritas",
+        imagePath: 'assets/images/rikuritas.jpg',
+        storeDescription: "Ubicación: Plazoleta Barrientos\n"
+            "\n"
+            "Uno de los dos primeros locales de comida varia de la Universidad en acogerse de manera oficial a la estrategia de Cero Plástico de un solo uso en la UdeA. ",
+        storeIcon: 'assets/images/rikuritas-icono.jpg',
+      ),
+      StoreView(
+        storeName: "Tienda Universitaria",
+        imagePath: 'assets/images/tienda-universitaria.jpg',
+        storeDescription: "Ubicación: Bloque 22\n"
+            "\n"
+            "La Tienda Universitaria, iniciativa de la Fundación Universidad de Antioquia, abrió sus puertas en 1999 para generar algunos ingresos económicos con la venta de artículos cotidianos y artesanías. La tienda, además, promueve el sentido de pertenencia por la Alma Máter de los antioqueños.",
+        storeIcon: 'assets/images/tienda-universitaria-icono.png',
+      ),
+      StoreView(
+        storeName: "De Lolita",
+        imagePath: 'assets/images/tienda-universitaria.jpg',
+        storeDescription: "Ubicación: Entre Bloque 22 y 21\n"
+            "\n"
+            "",
+        storeIcon: 'assets/images/tienda-universitaria-icono.png',
+      ),
+      StoreView(
+        storeName: "Frito Gay",
+        imagePath: 'assets/images/tienda-universitaria.jpg',
+        storeDescription: "Ubicación: Plazoleta Barrientos\n"
+            "\n"
+            "",
+        storeIcon: 'assets/images/tienda-universitaria-icono.png',
       ),
     ];
 

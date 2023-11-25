@@ -73,6 +73,14 @@ flutter:
     - assets/images/store2.jpeg
     - assets/images/migueria-icono.png
     - assets/images/migueria.jpg
+    - assets/images/arboreo-icono.jpg
+    - assets/images/arboreo.jpg
+    - assets/images/domo-icono.png
+    - assets/images/domo.jpg
+    - assets/images/tienda-universitaria-icono.png
+    - assets/images/tienda-universitaria.jpg
+    - assets/images/rikuritas-icono.jpg
+    - assets/images/rikuritas.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
