@@ -62,7 +62,7 @@ class StoreList extends StatelessWidget{
         imagePath: 'assets/images/tienda-universitaria.jpg',
         storeDescription: "Ubicación: Plazoleta Barrientos\n"
             "\n"
-            "",
+            "pastelitos y papas pa los descansdos de compumovil",
         storeIcon: 'assets/images/tienda-universitaria-icono.png',
       ),
     ];

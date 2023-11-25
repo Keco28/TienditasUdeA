@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tienditas_udea/view/home/map.dart';
 import 'package:tienditas_udea/view/home/search.dart';
+import "dart:ui";
+import "package:flutter/services.dart";
+
+
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -14,8 +18,13 @@ class Body extends StatelessWidget {
         children: <Widget>[
           HeaderWithButton(size: size),
           UniversityMap(),
-        ],
-      ),
+
+       ],)
     );
   }
+
 }
+
+
+
+
